@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="footer">
-	xyi
+
 
 </div>
 </body>

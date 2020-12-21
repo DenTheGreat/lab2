@@ -1,53 +1,60 @@
+<?php 
+session_start();
+$session = $_SESSION["act"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<?php require 'assets/db.php'; ?>
     <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="header">
-	<img src="assets/images/logo.png" width="3%">
+	<a href="index.php" id="logo"><img src="assets/images/logo.png"></a>
 	<div class="nav">
-		<a href="#" id="signup">Signup</a>
-		<a href="##" id="register">Register</a>
-	</div>
+  <?php 
+
+if ($session==1){
+echo '<a href="logout.php" id="register">Logout</a>';
+}
+else{
+
+     echo '
+    <a href="#" id="signin">Sign in</a>
+    <a href="register.php" id="register">Register</a>
+  
+
 </div>
- <!-- Modal content -->
- <div id="signupModal" class="modal">
+</div>
+<!----------Modal------->
+ <div id="signinModal" class="modal">
 <div class="modal-content">
   <div class="modal-header">
     <span class="close">&times;</span>
-    <h2>Modal Header</h2>
+    <h2>Sign in</h2>
   </div>
   <div class="modal-body">
-    <p>Some text in the Modal Body</p>
-    <p>Some other text...</p>
+  <form method="POST" action="loginscript.php">
+  	E-Mail<p>
+  		<input type="email" name="email"><p>
+  	Password<p>
+  	<input type="password" name="password">
+  	<input type="submit" value="Sign in" id="submit_btn">
+  </form>
   </div>
+
   <div class="modal-footer">
-    <h3>Modal Footer</h3>
+
+  	Maksymenko 2020
+        '; }
+?>
   </div>
-</div> 
+  </div> 
 </div>
+
 </body>
-<script> 
-	
-var modal = document.getElementById("signupModal");
-var btn = document.getElementById("signup");
-var span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-span.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-} 
+<script type="text/javascript" src="assets/js/modal.js">
 </script>
 </html>
