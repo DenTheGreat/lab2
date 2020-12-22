@@ -16,11 +16,12 @@
 		<option value="2">Administrator</option>
 	</select>
 	<input type="email" name="email" placeholder="E-Mail" required="required">
-	<input type="password" name="password" placeholder="Password" required="required">
-	<input type="password" name="confirm_password" placeholder="Repeat Password" required="required">
-<input type="submit" value="Register" id="submit_btn">
+	<input type="password" minlength="6" name="password" placeholder="Password" required="required">
+	<input type="password" minlength="6"  name="confirm_password" placeholder="Repeat Password" required="required"><p>
+
 </form>
 
 	<footer><?php require 'footer.php'?></footer>
 </body>
+
 </html>

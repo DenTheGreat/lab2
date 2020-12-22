@@ -1,6 +1,8 @@
 <?php 
 session_start();
+error_reporting(0);
 $session = $_SESSION["act"];
+$sid=$_SESSION["id"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +19,14 @@ $session = $_SESSION["act"];
   <?php 
 
 if ($session==1){
-echo '<a href="logout.php" id="register">Logout</a>';
+ $usid = getuser($sid);
+ foreach ($usid as $row) {
+  echo '
+  <a href="profile.php?id=',$row['id'],' " id="register">';
+
+echo $row['firstname'], ' ', $row['lastname'], ' </a>';
+}
+echo  '<a href="logout.php" id="register">Logout</a>';
 }
 else{
 

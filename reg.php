@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	 <script src="js/js.js"></script> 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Reg</title>
@@ -18,8 +19,7 @@ $password = $_POST["password"];
 adduser($firstname, $lastname, $email, $password, $role);
 header('Location: index.php');
 }
-header('Location: index.php');
-?>
-	
+header('Location: register.php');
+	?>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Коломиец</title>
+    <title>Система</title>
 
 
 </head>
@@ -45,9 +45,12 @@ foreach ($users as $row){ ?>
                         <tr>
                           <?php } 
 ?></tr>
+<?php if ($_SESSION["role"] == 2){
+    echo '
 <td colspan="5">
 <a href="register.php">Add user</a>
-</td>
+</td>';} ?>
+
 </table>
 
 </div>

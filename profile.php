@@ -5,6 +5,7 @@
  ?>
 </head>
 <body>
+    <div class="wrapper">
     <?php require 'header.php'?>
 
 <center>
@@ -94,6 +95,7 @@
 
 ';
  }} ?>
-<?php require 'footer.php'?>
+<footer><?php require 'footer.php'?></footer>
+</div>
 </body>
 </html>
